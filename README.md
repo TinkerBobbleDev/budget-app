@@ -9,7 +9,7 @@ Lista para o dinheiro de entrada
 Um jeito de criar outros controles de orçamento
 
 
-# Thing to add: 
+# Things to add: 
 Login and database
 
 List for the budget
