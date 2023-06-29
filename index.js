@@ -36,4 +36,24 @@ const disableButtons = (bool) =>{
     Array.from(editButtons).forEach((element) =>{
         element.disabled = bool;
     });
-}
+};
+
+// Modify list elements function
+
+const modifyElement = (element, edit = false) =>{
+    let parentDiv = element.parentElement;
+    let currentBalance = balanceValue.innerText;
+    let currentExpense = expenditureValue.innerText;
+    let parentAmount = parentDiv.querySelector(".amount").innerText;
+    if(edit){
+        let parentText = parentDiv.querySelector(".product").innerText;
+        productTitle.value = parentText;
+        userAmount.value = parentText;
+        disableButtons(true);
+    }
+
+    balanceValue.innerText = parseInt(currentBalance) + parseInt(parentAmount);
+    expenditureValue.innerText = parseInt(currentExpense) - parseInt(parentAmount);
+    parentDiv.remove();
+};
+
