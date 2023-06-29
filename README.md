@@ -14,6 +14,6 @@ Login and database
 
 List for the budget
 
-A way to create others budgets control
+A way to create various  budgets control
 
 
