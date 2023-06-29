@@ -1,5 +1,3 @@
-# https://bgcsofi.netlify.app
-
 # budget-app
 Budget app | Aplicativo para controle de renda
 
