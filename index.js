@@ -57,3 +57,27 @@ const modifyElement = (element, edit = false) =>{
     parentDiv.remove();
 };
 
+//Create list function
+
+const listCreator = (expenseName, expenseValue) => {
+    let subListContent = document.createElement("div");
+    subListContent.classList.add("sublist-content", "flex-space");
+    list.appendChild(subListContent);
+    subListContent.innerHTML = `<p class="product">${expenseName}</p>
+    <p class="amount>${expenseValue}</p>"`;
+    let editButtons = document.createElement("button");
+    editButton.classList.add("fa-solid", "fa-pen-to-square", "edit");
+    editButtons.style.fontSize = "1.2em";
+    editButtons.addEventListener("click", () => {
+        modifyElement(editButton, true);
+    });
+    let deleteButton = document.createElement("button");
+    deleteButton.classList.add("fa-solid", "fa-trash-circle", "delete");
+    deleteButton.style.fontSize = "1.2em";
+    deleteButton.addEventListener("click", () => {
+        modifyElement(deleteButton);
+    });
+    subListContent.appendChild(editButton);
+    subListContent.appendChild(deleteButton);
+    document.getElementById("list").appendChild(subListContent);    
+};
