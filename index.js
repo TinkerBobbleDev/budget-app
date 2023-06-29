@@ -81,3 +81,28 @@ const listCreator = (expenseName, expenseValue) => {
     subListContent.appendChild(deleteButton);
     document.getElementById("list").appendChild(subListContent);    
 };
+
+// Add expenses function 
+
+checkAmountButton.addEventListener("click", () => {
+    // Check empty
+    if(!userAmounts.value || productTitle.value){
+        productTitleError.classList.remove("hide");
+        return false;
+    }
+    // Enable buttons
+    disableButtons(false);
+    //Expense
+    let expenditure = parseInt(userAmount.value);
+    // Total expense (existing + new)
+    let sum = parseInt(expenditureValue.innerText) + expenditure;
+    expenditureValue.innerText = sum;
+    // Total balance = budget - total expense
+    const totalBalance = tempAmount - sum;
+    balanceValue.innerText = totalBalance;
+    //Create list
+    listCreator(productTitle.value, userAmount.value);
+    //Clear inputs
+    productTitle.value = "";
+    userAmount.value = "";
+});
